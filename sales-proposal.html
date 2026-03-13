@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Proposal — โครงการมะพร้าวเพื่อนักศึกษา IT</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green-900: #1b4332;
+  --green-800: #2d6a4f;
+  --green-700: #40916c;
+  --green-600: #52b788;
+  --green-100: #d8f3dc;
+  --green-50:  #f0faf3;
+  --gold:      #d4a017;
+  --gold-light:#f5e6b0;
+  --text:      #1a2e1a;
+  --text-mid:  #4a6353;
+  --white:     #ffffff;
+  --bg:        #f4fbf6;
+  --card-bg:   #ffffff;
+  --radius:    16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans Thai', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--green-900) 0%, var(--green-700) 100%);
+  padding: 60px 24px 48px;
+  text-align: center;
+  border-radius: 0 0 48px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 15% 85%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 85% 15%, rgba(255,255,255,0.04) 0%, transparent 40%);
+}
+.hero-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #a7f3c4;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 18px; border-radius: 40px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 5vw, 36px);
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.hero-sub {
+  font-size: 14px; color: rgba(255,255,255,0.65); font-weight: 300;
+  margin-bottom: 28px;
+}
+
+/* badges */
+.badges {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; font-size: 13px; font-weight: 500;
+  padding: 7px 16px; border-radius: 40px;
+}
+.badge svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* ── LAYOUT ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.section { margin-top: 40px; }
+
+/* section title */
+.section-title {
+  font-size: 18px; font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 22px;
+  background: linear-gradient(to bottom, var(--green-700), var(--green-600));
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.07);
+  border: 1px solid rgba(27,67,50,0.06);
+}
+
+/* objective */
+.objective-text {
+  font-size: 15px; line-height: 1.8; color: var(--text-mid);
+}
+
+/* concept */
+.concept-card {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.concept-title { font-size: 16px; font-weight: 700; color: var(--green-900); margin-bottom: 14px; }
+.concept-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.concept-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--text-mid);
+}
+.concept-list li::before {
+  content: '🌿';
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* offer banner */
+.offer-banner {
+  background: linear-gradient(135deg, var(--green-800), var(--green-700));
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  color: white;
+}
+.offer-title { font-size: 17px; font-weight: 700; margin-bottom: 16px; }
+.offer-items { display: flex; flex-direction: column; gap: 12px; }
+.offer-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.offer-icon {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.offer-icon svg { width: 18px; height: 18px; }
+.offer-item-title { font-size: 14px; font-weight: 600; }
+.offer-item-desc { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+/* KPI */
+.kpi-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-top: 16px;
+}
+.kpi-item {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.07);
+  border: 1px solid var(--green-100);
+}
+.kpi-value { font-size: 24px; font-weight: 700; color: var(--green-800); }
+.kpi-label { font-size: 12px; color: var(--text-mid); margin-top: 4px; }
+
+/* ── TABLE ── */
+.table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: 0 2px 12px rgba(27,67,50,0.08); }
+table { width: 100%; border-collapse: collapse; background: white; }
+thead tr { background: var(--green-800); }
+thead th { color: white; padding: 14px 12px; font-size: 14px; font-weight: 600; text-align: center; }
+tbody tr:nth-child(odd) { background: #f9fefb; }
+tbody tr:last-child { background: var(--green-50); font-weight: 700; }
+td { padding: 13px 12px; font-size: 14px; text-align: center; color: var(--text); border-bottom: 1px solid rgba(27,67,50,0.06); }
+
+/* ── PRODUCTS ── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 4px;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(27,67,50,0.1);
+  border: 1px solid rgba(27,67,50,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(27,67,50,0.15); }
+
+.product-img-wrap {
+  position: relative;
+  height: 180px;
+  background: var(--green-50);
+  overflow: hidden;
+}
+
+/* ════════════════════════════════════════════════
+   🖼️ วิธีใส่รูปภาพสินค้า
+   ────────────────────────────────────────────────
+   ให้เปลี่ยน src="" ของ <img> แต่ละอัน:
+
+   สินค้าที่ 1 (น้ำมะพร้าวสด)     → id="img-product-1"
+   สินค้าที่ 2 (พุดดิ้งมะพร้าวอ่อน) → id="img-product-2"
+   สินค้าที่ 3 (ไอศกรีมมะพร้าว)   → id="img-product-3"
+
+   ตัวอย่าง:
+     src="images/coconut-water.jpg"
+     หรือ src="assets/image1.png"   ← ตามชื่อไฟล์ที่มีอยู่
+   ════════════════════════════════════════════════ */
+
+.product-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .product-img { transform: scale(1.06); }
+
+/* placeholder แสดงเมื่อยังไม่มีรูป */
+.product-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  color: var(--green-700);
+  font-size: 13px;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+}
+.product-placeholder svg { width: 40px; height: 40px; opacity: 0.6; }
+
+.product-body { padding: 16px; }
+.product-name { font-size: 15px; font-weight: 700; color: var(--green-900); }
+.product-desc { font-size: 12px; color: var(--text-mid); margin-top: 4px; }
+.product-price {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-weight: 700; font-size: 13px;
+  padding: 4px 12px; border-radius: 40px;
+}
+
+/* ── STRUCTURE STEPS ── */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: flex; align-items: stretch; gap: 0;
+}
+.step-left {
+  display: flex; flex-direction: column; align-items: center;
+  width: 48px; flex-shrink: 0;
+}
+.step-dot {
+  width: 42px; height: 42px;
+  background: var(--green-700);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.step-dot svg { width: 20px; height: 20px; color: white; }
+.step-line {
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green-600), var(--green-100));
+  flex: 1;
+  margin: 0 auto;
+}
+.step:last-child .step-line { display: none; }
+.step-content {
+  flex: 1;
+  padding: 0 0 28px 16px;
+}
+.step-title { font-weight: 700; font-size: 15px; color: var(--green-900); }
+.step-desc { font-size: 13px; color: var(--text-mid); margin-top: 3px; }
+
+/* ── PDCA ── */
+.pdca-list { display: flex; flex-direction: column; gap: 0; }
+.pdca-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--green-100);
+  margin-bottom: 12px;
+}
+.pdca-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  background: var(--card-bg);
+  transition: background 0.2s;
+}
+.pdca-header:hover { background: var(--green-50); }
+.pdca-circle {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; color: white;
+  flex-shrink: 0;
+}
+.pdca-title { font-weight: 700; font-size: 15px; color: var(--green-900); flex: 1; }
+.pdca-chevron {
+  width: 20px; height: 20px; color: var(--green-700);
+  transition: transform 0.3s;
+}
+.pdca-item.open .pdca-chevron { transform: rotate(180deg); }
+.pdca-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  background: var(--green-50);
+  padding: 0 20px;
+  font-size: 14px; line-height: 1.8; color: var(--text-mid);
+  white-space: pre-line;
+}
+.pdca-item.open .pdca-body {
+  max-height: 600px;
+  padding: 16px 20px;
+}
+
+.pdca-p  .pdca-circle { background: #2563eb; }
+.pdca-d  .pdca-circle { background: var(--green-700); }
+.pdca-c  .pdca-circle { background: #d97706; }
+.pdca-a  .pdca-circle { background: #dc2626; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--green-900);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 24px;
+  margin-top: 60px;
+  font-size: 13px;
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 640px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .kpi-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-label">Sales Proposal · IT Student Event</div>
+  <h1>โครงการส่งมอบผลิตภัณฑ์มะพร้าว<br>เพื่อสนับสนุนกิจกรรมนักศึกษา IT</h1>
+  <p class="hero-sub">Coconut Supply Project for IT Student Event</p>
+  <div class="badges">
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Academic Project
+    </span>
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg>
+      Healthy Food
+    </span>
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/></svg>
+      Processing System
+    </span>
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Cost Analysis
+    </span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── OBJECTIVE ── -->
+  <div class="section reveal">
+    <div class="section-title">วัตถุประสงค์โครงการ</div>
+    <div class="card">
+      <p class="objective-text">
+        โครงการนี้มีวัตถุประสงค์เพื่อสนับสนุนกิจกรรมของนักศึกษา IT
+        ด้วยอาหารและเครื่องดื่มที่มีคุณภาพ ในราคาที่เหมาะสม
+        พร้อมทั้งเป็นกรณีศึกษาในการบริหารโครงการเชิงระบบ
+        ตั้งแต่การวางแผน ควบคุมต้นทุน จนถึงการประเมินผล
+        ตามหลัก <strong>PDCA</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- ── CONCEPT ── -->
+  <div class="section reveal">
+    <div class="section-title">แนวคิดเชิงธุรกิจ (Key Selling Idea)</div>
+    <div class="concept-card">
+      <div class="concept-title">ทำไมต้องเป็น "มะพร้าว"</div>
+      <ul class="concept-list">
+        <li>ราคาต่อหน่วยต่ำ เหมาะกับงบประมาณนักศึกษา</li>
+        <li>เป็นอาหารเพื่อสุขภาพ เหมาะกับทุกเพศทุกวัย</li>
+        <li>ควบคุมการผลิตได้เองทุกขั้นตอน</li>
+        <li>ลดต้นทุนโลจิสติกส์จากแหล่งผลิตเดียว</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── OFFER ── -->
+  <div class="section reveal">
+    <div class="section-title">ข้อเสนอเชิงธุรกิจ</div>
+    <div class="offer-banner">
+      <div class="offer-title">สาระสำคัญของข้อเสนอ</div>
+      <div class="offer-items">
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 0 0-3-3L9 12v3"/></svg>
+          </div>
+          <div>
+            <div class="offer-item-title">ควบคุมต้นทุน</div>
+            <div class="offer-item-desc">ไม่มีพ่อค้าคนกลาง ใช้วัตถุดิบจากแหล่งเดียว</div>
+          </div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="offer-item-title">คุณภาพมาตรฐาน</div>
+            <div class="offer-item-desc">ผลิตตามหลักสุขาภิบาลอาหาร</div>
+          </div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="offer-item-title">จัดการเวลา</div>
+            <div class="offer-item-desc">วางแผนผลิตและจัดส่งล่วงหน้า</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI -->
+    <div class="kpi-row">
+      <div class="kpi-item">
+        <div class="kpi-value">สูง</div>
+        <div class="kpi-label">คุณภาพสินค้า</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">70 บาท</div>
+        <div class="kpi-label">ต้นทุนต่อหัว</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PRICE TABLE ── -->
+  <div class="section reveal">
+    <div class="section-title">งบประมาณโครงการ (300 คน)</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>รายการ</th>
+            <th>ขนาด</th>
+            <th>ต้นทุน/หน่วย</th>
+            <th>จำนวน</th>
+            <th>รวม</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>น้ำมะพร้าวสด</td>
+            <td>250 มิลลิลิตร</td>
+            <td>20 บาท</td>
+            <td>300</td>
+            <td>6,000</td>
+          </tr>
+          <tr>
+            <td>พุดดิ้งมะพร้าวอ่อน</td>
+            <td>200 กรัม</td>
+            <td>25 บาท</td>
+            <td>300</td>
+            <td>7,500</td>
+          </tr>
+          <tr>
+            <td>ไอศกรีมมะพร้าว</td>
+            <td>200 กรัม</td>
+            <td>25 บาท</td>
+            <td>300</td>
+            <td>7,500</td>
+          </tr>
+          <tr>
+            <td colspan="4"><strong>งบประมาณรวม</strong></td>
+            <td><strong>21,000 บาท</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── PRODUCTS ── -->
+  <div class="section reveal">
+    <div class="section-title">ตัวอย่างสินค้า</div>
+    <div class="products-grid">
+
+      <!-- ════ สินค้าที่ 1 ════
+           เปลี่ยน src="" เป็น path รูปของคุณ
+           เช่น src="assets/image1.png"
+           ================================= -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img id="img-product-1"
+               src="assets/image1.png"
+               alt="น้ำมะพร้าวสด"
+               class="product-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="product-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>ใส่รูป image1.png</span>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">น้ำมะพร้าวสด</div>
+          <div class="product-desc">สดจากสวน หวานธรรมชาติ</div>
+          <span class="product-price">20 บาท / 250 มล.</span>
+        </div>
+      </div>
+
+      <!-- ════ สินค้าที่ 2 ════
+           เปลี่ยน src="" เป็น path รูปของคุณ
+           เช่น src="assets/image2.png"
+           ================================= -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img id="img-product-2"
+               src="assets/image2.png"
+               alt="พุดดิ้งมะพร้าวอ่อน"
+               class="product-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="product-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>ใส่รูป image2.png</span>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">พุดดิ้งมะพร้าวอ่อน</div>
+          <div class="product-desc">เนียนนุ่ม หอมกะทิ</div>
+          <span class="product-price">25 บาท / 200 ก.</span>
+        </div>
+      </div>
+
+      <!-- ════ สินค้าที่ 3 ════
+           เปลี่ยน src="" เป็น path รูปของคุณ
+           เช่น src="assets/image3.png"
+           ================================= -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img id="img-product-3"
+               src="assets/image3.png"
+               alt="ไอศกรีมมะพร้าว"
+               class="product-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="product-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>ใส่รูป image3.png</span>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">ไอศกรีมมะพร้าว</div>
+          <div class="product-desc">หวานมัน สดชื่น</div>
+          <span class="product-price">25 บาท / 200 ก.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── STRUCTURE ── -->
+  <div class="section reveal">
+    <div class="section-title">โครงสร้างธุรกิจที่นำมาใช้</div>
+    <div class="card">
+      <div class="steps">
+        <div class="step">
+          <div class="step-left">
+            <div class="step-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">สวนมะพร้าว</div>
+            <div class="step-desc">คัดวัตถุดิบคุณภาพจากแหล่งผลิตโดยตรง</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/></svg>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">โรงงานแปรรูป</div>
+            <div class="step-desc">ผลิตตามมาตรฐานสุขาภิบาลอาหาร</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">ขนส่ง (Cold Chain)</div>
+            <div class="step-desc">ควบคุมอุณหภูมิตลอดการขนส่ง รักษาความสดใหม่</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">คาเฟ่ / จุดกระจายสินค้า</div>
+            <div class="step-desc">ส่งมอบสินค้าถึงมือนักศึกษาโดยตรง</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PDCA ── -->
+  <div class="section reveal">
+    <div class="section-title">การบริหารโครงการแบบ PDCA</div>
+    <div class="pdca-list">
+
+      <div class="pdca-item pdca-p open">
+        <div class="pdca-header" onclick="togglePDCA(this)">
+          <div class="pdca-circle">P</div>
+          <div class="pdca-title">Plan – การวางแผนกลยุทธ์</div>
+          <svg class="pdca-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="pdca-body">• Demand Forecasting: วิเคราะห์กลุ่มเป้าหมายนักศึกษา IT จำนวน 300 คน เพื่อกำหนดปริมาณการผลิตแบบลดของเสีย (Zero Waste)
+• Budgeting: วางโครงสร้างงบประมาณ 16,500 บาท โดยตัดต้นทุนพ่อค้าคนกลาง เพื่อให้ได้มูลค่าสินค้าสูงสุดในราคาเฉลี่ย 55 บาท/คน</div>
+      </div>
+
+      <div class="pdca-item pdca-d">
+        <div class="pdca-header" onclick="togglePDCA(this)">
+          <div class="pdca-circle">D</div>
+          <div class="pdca-title">Do – การปฏิบัติงานเชิงระบบ</div>
+          <svg class="pdca-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="pdca-body">• Sourcing & Production: คัดเลือกมะพร้าวน้ำหอมเกรดพรีเมียมจากสวน เข้าสู่กระบวนการแปรรูปเป็นน้ำมะพร้าวสด และพุดดิ้ง/ไอศกรีม ภายใต้มาตรฐานโรงงาน
+• Integrated Logistics: ใช้ระบบขนส่งควบคุมอุณหภูมิ (Cold Chain) เพื่อรักษาความสดใหม่ (Freshness Chain)
+• Distribution: บริหารการแจกจ่ายสินค้าให้รวดเร็ว เป็นระเบียบ สอดคล้องกับตารางกิจกรรมของนักศึกษา</div>
+      </div>
+
+      <div class="pdca-item pdca-c">
+        <div class="pdca-header" onclick="togglePDCA(this)">
+          <div class="pdca-circle">C</div>
+          <div class="pdca-title">Check – การตรวจสอบและควบคุมคุณภาพ</div>
+          <svg class="pdca-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="pdca-body">• Quality Assurance (QA/QC): ตรวจสอบคุณภาพสินค้า ทั้งด้านความสะอาด รสชาติ และอุณหภูมิ ก่อนส่งมอบ
+• Quantity Audit: ตรวจสอบจำนวนสินค้าให้ครบถ้วน 300 ชุด ตามรายชื่อผู้เข้าร่วมกิจกรรม
+• Timeline Tracking: ตรวจสอบความตรงต่อเวลาของระบบขนส่ง เพื่อให้สินค้าถึงมือนักศึกษาในช่วงเวลาพักเบรกอย่างเหมาะสม</div>
+      </div>
+
+      <div class="pdca-item pdca-a">
+        <div class="pdca-header" onclick="togglePDCA(this)">
+          <div class="pdca-circle">A</div>
+          <div class="pdca-title">Act – การประเมินผลและพัฒนาอย่างต่อเนื่อง</div>
+          <svg class="pdca-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="pdca-body">• Data Collection & Feedback: ใช้ QR Code บนบรรจุภัณฑ์ เชื่อมโยงแบบประเมินออนไลน์ (Google Forms) เพื่อเก็บข้อมูลความพึงพอใจ
+• Performance Review: วิเคราะห์ผลตอบรับและปัญหาที่พบ เช่น ระยะเวลาการขนส่ง หรือเมนูที่ได้รับความนิยมสูงสุด
+• Future Optimization: นำข้อมูลมาสรุปเป็นรายงาน เพื่อใช้ปรับปรุงโครงการในอนาคต (เช่น การปรับสัดส่วนเมนูตามความชอบของนักศึกษา)</div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  © 2026 Sales Proposal · โครงการมะพร้าวเพื่อนักศึกษา IT
+</footer>
+
+<script>
+// PDCA accordion
+function togglePDCA(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Auto-hide placeholder if src is set
+document.querySelectorAll('.product-img').forEach(img => {
+  if (img.src && img.src !== window.location.href) {
+    img.nextElementSibling.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
